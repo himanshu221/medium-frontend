@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+input:focus ~ .input-text {
+  @apply text-opacity-100 text-slate-800 bg-neutral-950 transition duration-500 transform -translate-y-5 scale-75
+}
+
+input:not(:placeholder-shown) ~ .input-text {
+  @apply text-opacity-100 text-slate-800 bg-neutral-950 transition duration-500 transform -translate-y-5 scale-75
+}
