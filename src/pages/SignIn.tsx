@@ -4,7 +4,7 @@ import { TextGenerateEffect } from "../components/TextGenerator"
 
 export const SignIn = () => {
     return (
-        <div className="h-screen w-full flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.05] relative overflow-hidden">
+        <div className="h-screen w-full flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.03] relative overflow-hidden">
         <Spotlight
             className="top-60 -left-50 md:left-0 md:top-20 lg:left-0 lg:top-0"
             fill="white"

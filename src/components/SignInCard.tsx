@@ -19,7 +19,6 @@ type messageType  = string | {
 }
 
 export const SignInCard = () => {
-  const setUserName = useSetRecoilState(usernameAtom);
   const navigate = useNavigate();
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
@@ -37,7 +36,7 @@ export const SignInCard = () => {
           },
         })
         .then((resp: AxiosResponse) => {
-          setUserName(emailInput.current ? emailInput.current.value : '');
+          localStorage.setItem('username', emailInput.current ? emailInput.current.value : '');
           localStorage.setItem('token', resp.data.token);
           navigate('/dashboard');
         });
