@@ -38,7 +38,7 @@ export const SignInCard = () => {
         .then((resp: AxiosResponse) => {
           localStorage.setItem('username', emailInput.current ? emailInput.current.value : '');
           localStorage.setItem('token', resp.data.token);
-          navigate('/dashboard');
+          navigate('/blog');
         });
 
       toast.promise(

@@ -8,8 +8,6 @@ export const AppBar = () => {
     const [showDropDown,setShowDropDown] = useRecoilState(showDropDownAtom)
     const navigate = useNavigate()
 
-    console.log(showDropDown)
-
     function onClickHandler() {
         setShowDropDown(!showDropDown)
     }
