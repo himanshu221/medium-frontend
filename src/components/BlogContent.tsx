@@ -8,7 +8,7 @@ const intDateFormat = new Intl.DateTimeFormat('default',{
 });
 export const BlogContent = ({title, content, publishDate }: BlogContentType) => {
     return (
-        <div>
+        <div className="text-white bg-neutral-900 p-5 rounded-lg">
             <div className="font-bold text-3xl  md:text-5xl pb-4">
                 {title}
             </div>

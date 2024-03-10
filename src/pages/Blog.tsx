@@ -22,7 +22,7 @@ export const Blog = () => {
                 <div className="h-full md:h-screen w-full bg-dot-white/[0.2] px-10 relative bg-neutral-800 flex justify-center overflow-auto">
                         <AppBar/>
                         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div> */}
-                        <div className="flex h-auto my-32 w-[95%] md:w-[90%]">
+                        <div className="flex my-32 w-[95%] md:w-[90%]">
                             <div className="grow text-white bg-neutral-900 p-5 rounded-lg">
                                 <BlogContentSkeleton />
                             </div>
@@ -37,8 +37,8 @@ export const Blog = () => {
                 <div className="h-full md:h-screen w-full bg-dot-white/[0.2] px-10 relative bg-neutral-800 flex justify-center overflow-auto">
                         <AppBar/>
                         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div> */}
-                        <div className="flex h-auto my-32 w-[95%] md:w-[90%]">
-                            <div className="grow text-white bg-neutral-900 p-5 rounded-lg">
+                        <div className="flex my-32 w-[95%] md:w-[90%]">
+                            <div className="grow">
                                 <BlogContent title={blog.getValue().title} content={blog.getValue().content} publishDate={blog.getValue().publishDate} />
                             </div>
                             <div className="ml-8 text-white">

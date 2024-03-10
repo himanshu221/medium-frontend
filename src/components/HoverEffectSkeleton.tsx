@@ -1,6 +1,6 @@
 import { cn } from "../utils/cn";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./BlogCard";
-
+let mp = [1,2,3,4,5]
 export const HoverEffectSkeleton = ({
   className,
 }: {
@@ -8,7 +8,7 @@ export const HoverEffectSkeleton = ({
 }) => {
   return (
     <div className={cn('grid grid-cols-1 py-10', className)}>
-      {[1,2,3,4,5].map((_, ind) => (
+      {mp.map((_, ind) => (
         <div key={ind} className="relative z-0 group animate-pulse block p-2 h-full w-full">
           <Card>
             <CardHeader className="flex items-center">
