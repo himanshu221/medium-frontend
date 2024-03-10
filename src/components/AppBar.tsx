@@ -21,7 +21,7 @@ export const AppBar = () => {
 
     return <nav className="fixed border-b border-slate-900 z-20 top-0 left-0 right-0 backdrop-blur-sm  flex justify-between py-3 px-16">
         <div className="flex justify-center flex-col">
-            <Link to="/dashboard">
+            <Link to="/blog">
                 <div className="font-bold bg-[#3178c6] bg-clip-text text-transparent text-4xl">
                     Medium
                 </div>
