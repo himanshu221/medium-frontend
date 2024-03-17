@@ -19,6 +19,10 @@ export const AppBar = () => {
         navigate('/signin')
     }
 
+    function createBlogHandler() {
+        navigate('/blog/create')
+    }
+
     return <nav className="fixed border-b border-slate-900 z-20 top-0 left-0 right-0 backdrop-blur-sm  flex justify-between py-3 px-16">
         <div className="flex justify-center flex-col">
             <Link to="/blog">
@@ -27,7 +31,10 @@ export const AppBar = () => {
                 </div>
             </Link>
         </div>
-        <div className="flex flex-col relative justify-center">
+        <div className="flex relative justify-center">
+             <button onClick={createBlogHandler} className="bg-[#3178c6] mr-10 hover:bg-[#1d5ca0] text-white font-bold py-2 px-4 rounded-full">
+                Write
+            </button>
             <button type="button" onClick={onClickHandler} className="flex text-sm bg-neutral-900 rounded-full md:me-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                 <div className="w-5 h-5 p-5 text-white text-lg flex justify-center items-center rounder-full">
                     {userName ? userName.toUpperCase().charAt(0) : "U"}
