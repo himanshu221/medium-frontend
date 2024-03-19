@@ -1,10 +1,11 @@
 import { useRecoilState } from "recoil"
 import { showDropDownAtom } from "../store/atoms/navbar"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link, useLocation } from "react-router-dom"
 
 
 export const AppBar = () => {
     const userName = localStorage.getItem('username')
+    const location = useLocation()
     const [showDropDown,setShowDropDown] = useRecoilState(showDropDownAtom)
     const navigate = useNavigate()
 
@@ -33,7 +34,7 @@ export const AppBar = () => {
         </div>
         <div className="flex relative justify-center">
              <button onClick={createBlogHandler} className="bg-[#3178c6] mr-10 hover:bg-[#1d5ca0] text-white font-bold py-2 px-4 rounded-full">
-                Write
+                {location.pathname.match('/blog/create') ? "Publish" : "Write"}
             </button>
             <button type="button" onClick={onClickHandler} className="flex text-sm bg-neutral-900 rounded-full md:me-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                 <div className="w-5 h-5 p-5 text-white text-lg flex justify-center items-center rounder-full">

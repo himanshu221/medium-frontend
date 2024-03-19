@@ -48,6 +48,7 @@ darkMode: "class",
     },
   },
   plugins: [ 
+    require('@tailwindcss/typography'),
     function ({ matchUtilities, theme }) {
     matchUtilities(
       {

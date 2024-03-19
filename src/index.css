@@ -14,3 +14,9 @@ input:not(:placeholder-shown) ~ .input-text {
 .scrollbar::-webkit-scrollbar {
   color: aliceblue;
 }
+
+.tiptap.ProseMirror{
+  outline: none;
+  color: white;
+  height: 500px;
+}
