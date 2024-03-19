@@ -44,3 +44,8 @@ input:not(:placeholder-shown) ~ .input-text {
 .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)){
   border-left-color: whitesmoke;
 }
+
+.is-active {
+  background-color: rgb(59, 65, 70);
+  border-radius: 5px;
+}
