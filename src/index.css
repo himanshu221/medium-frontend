@@ -18,5 +18,29 @@ input:not(:placeholder-shown) ~ .input-text {
 .tiptap.ProseMirror{
   outline: none;
   color: white;
-  height: 500px;
+  height: 400px;
+  min-width: 500px;
+}
+
+.prose {
+  max-width: none;
+}
+
+.prose :where(ul > li):not(:where([class~="not-prose"],[class~="not-prose"] *))::marker {
+  color: white;
+}
+.prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: inherit;
+  margin-bottom: inherit;
+}
+.prose :where(ol > li):not(:where([class~="not-prose"],[class~="not-prose"] *))::marker {
+  color: white;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  background-color: black;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)){
+  border-left-color: whitesmoke;
 }

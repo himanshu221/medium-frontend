@@ -15,7 +15,7 @@ export const BlogContent = ({title, content, publishDate }: BlogContentType) => 
             <div className="text-zinc-500 pb-10">
                 {`Posted on ${intDateFormat.format(new Date(publishDate))}`}
             </div>
-            <div className="text-md md:text-lg">
+            <div className="prose prose-invert text-md md:text-lg">
                 {content}
             </div>
         </div>

@@ -1,11 +1,12 @@
 import { EditorContent, useEditor } from '@tiptap/react'
 import { StarterKit} from '@tiptap/starter-kit'
-import { useState } from 'react'
 import { MenuBar } from './EditorMenuBar'
+import { useRecoilState } from 'recoil'
+import { contentAtom } from '../store/atoms/blog'
 
 
 export const Editor = () => {
-    const [content, setContent] = useState("")
+    const [content, setContent] = useRecoilState(contentAtom)
 
     const editor = useEditor({
         autofocus: true,
@@ -16,9 +17,9 @@ export const Editor = () => {
         }
     })
     return (
-       <div className='bg-neutral-900 p-3 rounded-lg'>
+       <div className='bg-neutral-900  p-5 rounded-lg border'>
             {editor && <MenuBar editor={editor}/>}
-            <div className='prose lg:prose-xl mt-3 mx-5 overflow-auto'>
+            <div className='prose prose-invert mt-3 ml-3 overflow-y-auto'>
                 <EditorContent editor={editor} />
             </div>
        </div>

@@ -1,5 +1,5 @@
 import { Editor } from "@tiptap/react"
-import {  Bold,Code, CodepenIcon, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Italic, List, ListOrdered, Quote, Redo, Strikethrough, Undo} from 'lucide-react'
+import {  Bold, CodepenIcon, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Italic, List, ListOrdered, Quote, Redo, Strikethrough, Undo} from 'lucide-react'
  
 interface props {
     editor: Editor
@@ -23,12 +23,6 @@ export const MenuBar = ({editor} : props) => {
             disabled={!editor.can().chain().focus().toggleStrike().run()}
             className={editor.isActive("strike") ? "is-active" : ""}>
             <Strikethrough className="w-6 h-6 text-white" />
-        </button>
-        <button
-            onClick={() => editor.chain().focus().toggleCode().run()}
-            disabled={!editor.can().chain().focus().toggleCode().run()}
-            className={editor.isActive("code") ? "is-active" : ""}>
-            <Code className="w-6 h-6 text-white" />
         </button>
         <button
             onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
