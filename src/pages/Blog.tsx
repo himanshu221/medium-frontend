@@ -34,7 +34,7 @@ export const Blog = () => {
             )
         case 'hasValue':
             return (
-                <div className="h-full md:h-screen w-full bg-dot-white/[0.2] px-10 relative bg-neutral-800 flex justify-center overflow-auto">
+                <div className="h-100dvh w-full bg-dot-white/[0.2] px-10 relative bg-neutral-800 flex justify-center overflow-auto">
                         <AppBar/>
                         <div className="flex my-32 w-[95%] md:w-[90%]">
                             <div className="grow">

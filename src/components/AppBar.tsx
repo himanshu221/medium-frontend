@@ -1,11 +1,15 @@
 import { useRecoilState, useRecoilValue } from "recoil"
 import { showDropDownAtom } from "../store/atoms/navbar"
 import { useNavigate, Link, useLocation } from "react-router-dom"
-import { contentAtom } from "../store/atoms/blog"
-
+import { blogTitleAtom, contentAtom } from "../store/atoms/blog"
+import axios from 'axios'
+import { backend_host } from "../config"
+import { CreateBlogSchema, createBlogSchema } from "@himanshu212/medium-commons"
+import toast from "react-hot-toast"
 
 export const AppBar = () => {
     const content = useRecoilValue(contentAtom)
+    const blogTile = useRecoilValue(blogTitleAtom)
     const userName = localStorage.getItem('username')
     const location = useLocation()
     const [showDropDown,setShowDropDown] = useRecoilState(showDropDownAtom)
@@ -27,7 +31,44 @@ export const AppBar = () => {
     }
 
     function publishBlogHandler() {
-        console.log(content)
+        if(content.length==0 || blogTile.length==0){
+            toast.error('Add title and/or blog content',{
+                style: {
+                  minWidth: '250px',
+                  backgroundColor: '#18181b',
+                  color: '#d4d4d8',
+                },
+              })
+            return
+        }
+        const data: CreateBlogSchema = {
+            title: blogTile,
+            content: content
+        }
+        const promise = axios.post(`https://${backend_host}/api/v1/blog`,data,{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }).then(() => {
+            navigate('/blog')
+        })
+
+        toast.promise(
+            promise,
+            {
+              loading: "Saving blog",
+              error: "An error occured while saving blog!",
+              success: "Successfully saved blog",
+            },
+            {
+              style: {
+                minWidth: '250px',
+                backgroundColor: '#18181b',
+                color: '#d4d4d8',
+              },
+            }
+          );
+
     }
 
     return <nav className="fixed border-b border-slate-900 z-20 top-0 left-0 right-0 backdrop-blur-sm  flex justify-between py-3 px-16">

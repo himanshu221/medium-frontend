@@ -45,3 +45,8 @@ export const contentAtom = atom({
     key: "contentAtom",
     default: "Write what is on your mind..."
 })
+
+export const blogTitleAtom = atom({
+    key: "blogTitleAtom",
+    default: ""
+})
