@@ -3,6 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./BlogCard";
+import { EditorProvider } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import { EditorProps } from "@tiptap/pm/view";
 
 interface blogsType {
     id: number,
@@ -18,6 +21,12 @@ interface blogsType {
 const intDateFormat = new Intl.DateTimeFormat('default',{
     year: "numeric", month: "long", day: "numeric"
 });
+
+const editorProps: EditorProps = {
+  attributes: {
+    class: 'prose prose-invert !h-auto'
+  }
+}
 export const HoverEffect = ({
   items,
   className,
@@ -67,9 +76,9 @@ export const HoverEffect = ({
             </CardHeader>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>
-              {item.content.length > 100
-                ? item.content.slice(0, 100) + '...'
-                : item.content}
+              <div className="dashboard">
+                <EditorProvider editable={false} children={<div></div>} extensions={[StarterKit]} content={item.content.length > 100 ? item.content.slice(0, 100) + '...'  : item.content} editorProps={editorProps} />
+              </div>
             </CardDescription>
             <CardFooter>{`${Math.ceil(
                 item.content.length / 300

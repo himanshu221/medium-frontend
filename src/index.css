@@ -49,3 +49,8 @@ input:not(:placeholder-shown) ~ .input-text {
   background-color: rgb(59, 65, 70);
   border-radius: 5px;
 }
+
+
+/* .tiptap.ProseMirror.dashboard {
+  height: auto;
+} */
