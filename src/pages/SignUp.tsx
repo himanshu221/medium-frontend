@@ -1,4 +1,3 @@
-import { SignInCard } from "../components/SignInCard"
 import { SignUpCard } from "../components/SignUpCard"
 import { Spotlight } from "../components/SpotLight"
 import { TextGenerateEffect } from "../components/TextGenerator"

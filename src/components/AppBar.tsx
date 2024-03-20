@@ -4,7 +4,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom"
 import { blogTitleAtom, contentAtom } from "../store/atoms/blog"
 import axios from 'axios'
 import { backend_host } from "../config"
-import { CreateBlogSchema, createBlogSchema } from "@himanshu212/medium-commons"
+import { CreateBlogSchema} from "@himanshu212/medium-commons"
 import toast from "react-hot-toast"
 
 export const AppBar = () => {

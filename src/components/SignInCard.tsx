@@ -1,9 +1,7 @@
-import { useSetRecoilState } from "recoil"
 import { BottomWarning } from "./BottomWarning"
 import { Button } from "./Button"
 import { Heading } from "./Heading"
 import { InputBox } from "./Input"
-import { usernameAtom } from "../store/atoms/user"
 import { useRef } from "react"
 import axios, { AxiosResponse } from 'axios'
 import { backend_host } from "../config"

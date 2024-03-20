@@ -1,5 +1,3 @@
-import { useSetRecoilState } from "recoil"
-import { usernameAtom } from "../store/atoms/user"
 import { BottomWarning } from "./BottomWarning"
 import { Button } from "./Button"
 import { Heading } from "./Heading"
