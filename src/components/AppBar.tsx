@@ -24,6 +24,7 @@ export const AppBar = () => {
         localStorage.removeItem('username')
         setShowDropDown(false)
         navigate('/signin')
+        navigate(0)
     }
 
     function createBlogHandler() {
@@ -51,6 +52,7 @@ export const AppBar = () => {
             }
         }).then(() => {
             navigate('/blog')
+            navigate(0)
         })
 
         toast.promise(
@@ -74,17 +76,17 @@ export const AppBar = () => {
     return <nav className="fixed border-b border-slate-900 z-20 top-0 left-0 right-0 backdrop-blur-sm  flex justify-between py-3 px-16">
         <div className="flex justify-center flex-col">
             <Link to="/blog">
-                <div className="font-bold bg-[#3178c6] bg-clip-text text-transparent text-4xl">
+                <div className="font-bold bg-[#3178c6] bg-clip-text text-transparent text-xl md:text-4xl mr-5">
                     Medium
                 </div>
             </Link>
         </div>
         <div className="flex relative justify-center">
-            {!location.pathname.match('/blog/create') ?  <button onClick={createBlogHandler} className="bg-[#3178c6] mr-10 hover:bg-[#1d5ca0] text-white font-bold py-2 px-4 rounded-full">
+            {!location.pathname.match('/blog/create') ?  <button onClick={createBlogHandler} className="bg-[#3178c6] mr-10 hover:bg-[#1d5ca0] text-white font-bold py-2 px-4 text-sm md:text-lg rounded-full">
                 Write</button> : <button onClick={publishBlogHandler} className="bg-[#3178c6] mr-10 hover:bg-[#1d5ca0] text-white font-bold py-2 px-4 rounded-full">
                 Publish</button>}
             <button type="button" onClick={onClickHandler} className="flex text-sm bg-neutral-900 rounded-full md:me-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                <div className="w-5 h-5 p-5 text-white text-lg flex justify-center items-center rounder-full">
+                <div className="w-5 h-5 p-5 text-white md:text-lg text-sm flex justify-center items-center rounder-full">
                     {userName ? userName.toUpperCase().charAt(0) : "U"}
                 </div>
             </button>

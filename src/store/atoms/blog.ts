@@ -43,7 +43,7 @@ export const blogAtom = selectorFamily<blogsType,string|undefined>({
 
 export const contentAtom = atom({
     key: "contentAtom",
-    default: "Write what is on your mind..."
+    default: ""
 })
 
 export const blogTitleAtom = atom({
